@@ -95,6 +95,7 @@ button:hover {
     border: none;
     display: block;
     margin-left: 250px;
+    gap: 20px;
   }
   
   .site-footer {
