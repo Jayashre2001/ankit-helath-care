@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book an Appointment</title>
+  <link rel="stylesheet" href="/css/appoinment.css">
+</head>
+<body>
+  <div class="appointment-container">
+    <h1>Book an Appointment</h1>
+    <form action="submit-appointment.php" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email">
+
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">Preferred Time</label>
+      <input type="time" id="time" name="time" required>
+
+      <label for="department">Select Department</label>
+      <select id="department" name="department" required>
+        <option value="">--Choose--</option>
+        <option value="General Medicine">General Medicine</option>
+        <option value="Pediatrics">Pediatrics</option>
+        <option value="Neurology">Neurology</option>
+        <option value="Cardiology">Cardiology</option>
+      </select>
+
+      <label for="message">Additional Message (optional)</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <button type="submit">Submit Appointment</button>
+    </form>
+  </div>
+</body>
+</html>

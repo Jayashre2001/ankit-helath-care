@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.doctor-list-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.doctor-list-section h1 {
+    font-size: 2em;
+    border-bottom: 3px solid #19abe0;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.doctor-list-section p {
+    margin-bottom: 30px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.doctor-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.doctor-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px 20px;
+    width: calc(50% - 10px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.doctor-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.doctor-card h2 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.specialty {
+    display: inline-block;
+    border: 2px solid #19abe0;
+    color: #19abe0;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .doctor-card {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .doctor-card {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}

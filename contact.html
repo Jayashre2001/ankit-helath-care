@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Book an Appointment</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/contact.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <section class="contact-container">
+      <h2>Contact Us</h2>
+      <div class="contact-content">
+        <div class="contact-image">
+          <img
+            src="https://img.freepik.com/free-vector/healthcare-call-center-concept_23-2148505022.jpg"
+            alt="Contact Illustration"
+          />
+        </div>
+
+        <div class="contact-form">
+          <h3>Book an Appointment</h3>
+          <hr class="underline" />
+
+          <form>
+            <div class="form-row">
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter Your Name"
+                required
+              />
+              <input
+                type="number"
+                id="age"
+                placeholder="Enter Your Age"
+                required
+              />
+            </div>
+
+            <select id="gender" required>
+              <option value="" disabled selected>Enter your Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+
+            <textarea
+              id="message"
+              placeholder="Enter your Message..."
+              rows="4"
+              required
+            ></textarea>
+
+            <button onclick="sendToWhatsapp()">Submit</button>
+          </form>
+          <!-- <form action="#" class="form-group">
+                <div class="form-group mb-3">
+                    <input type="text" id="name" class="form-control" placeholder="Name" required>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="email" id="email" class="form-control" placeholder="Email" required>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="text" id="phone" class="form-control" placeholder="Phone Number" required>
+                </div>
+                 
+                <div class="form-group mb-3">
+                    <textarea id="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
+                </div>
+                <div class="text-end">
+                    <button type="button" class="btn btn-primary" onclick="whatsapp();">Submit</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </form> -->
+        </div>
+      </div>
+    </section>
+    <section class="map-section">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3146.9362230756083!2d85.822036923984!3d20.28540443641245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909e6e8458d55%3A0x198767daab6b1bd0!2sAnkit%20Health%20care!5e0!3m2!1sen!2sin!4v1745908874848!5m2!1sen!2sin"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+    <div id="footer"></div>
+
+    <script>
+      function sendToWhatsapp() {
+        var name = document.getElementById("name").value.trim();
+        var age = document.getElementById("age").value.trim();
+        var gender = document.getElementById("gender").value.trim();
+        var message = document.getElementById("message").value.trim();
+
+        if (name !== "" && age !== "" && gender !== "" && message !== "") {
+          var text =
+            "*Name:* " +
+            name +
+            "%0A" +
+            "*Age:* " +
+            age +
+            "%0A" +
+            "*Gender:* " +
+            gender +
+            "%0A" +
+            "*Message:* " +
+            message;
+
+          var phoneNumber = "917978725576"; // your WhatsApp number
+          var url = "https://wa.me/" + phoneNumber + "?text=" + text;
+
+          window.open(url, "_blank").focus();
+        } else {
+          alert("Please fill out all fields before submitting.");
+        }
+      }
+    </script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

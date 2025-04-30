@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+  
+  .hero {
+    background-color: #153eb0;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+  
+  .hero h1 span {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .about-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  
+  .about-image img {
+     width: 83%;
+    max-width: 366px;
+    border-radius: 10px;
+  }
+  
+  .about-text {
+    max-width: 600px;
+    margin-left: 30px;
+  }
+  
+  .about-text h2 a {
+    color: #0077cc;
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+  
+  .about-text p {
+    margin-top: 15px;
+    color: #333;
+    font-size: 1em;
+  }
+  .gallery-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+    margin-left: 20px;
+}
+
+.gallery-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.gallery-scroll::-webkit-scrollbar-track {
+  background: #e0e0e0; /* Light gray track */
+  border-radius: 50px;
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 200px; /* Ensure consistent width */
+    height: 200px; /* Set a height for proper fit */
+}
+
+.gallery-item img  ,video{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make it fill nicely without stretching */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2em; /* Adjusted */
+  }
+
+  .about-section {
+    flex-direction: column; /* Change to column layout on smaller screens */
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text {
+    margin-left: 0; /* Remove left margin for better alignment */
+    margin-top: 20px;
+  }
+
+  .gallery-scroll {
+    flex-direction: row;
+        width: 100%;
+        overflow-x: scroll;
+        gap: 15px;
+        margin-left: 0;
+  }
+
+  .gallery-item img,
+  .gallery-item video {
+    width: 100%;
+    max-width: 300px; /* Adjusted width for better fit */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5em; /* Further Adjusted */
+  }
+
+  .about-text h2 a {
+    font-size: 1.5em; /* Adjusted font size */
+  }
+
+  .about-text p {
+    font-size: 0.9em; /* Adjusted font size for smaller screens */
+  }
+
+  .gallery-item img,
+  .gallery-item video {
+    width: 100%;
+    max-width: 250px; /* Further adjusted width */
+  }
+}
